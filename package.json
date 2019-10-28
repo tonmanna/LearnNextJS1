@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "less": "^3.10.3",
     "next": "^9.1.1",
     "react": "^16.11.0",
-    "react-dom": "^16.11.0"
+    "react-dom": "^16.11.0",
+    "react-redux": "^7.1.1"
   }
 }
