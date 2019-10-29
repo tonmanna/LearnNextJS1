@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "../style.less";
-import Layout from "../components/layout";
+import Layout from "../components/layouts/layout1";
 const fetch = require("node-fetch");
 class AboutPage extends Component {
   static async getInitialProps() {
@@ -20,7 +20,7 @@ class AboutPage extends Component {
         <Layout></Layout>
         <div className="example">About</div>
         {this.props.result.map(value => (
-          <div>
+          <div key={value.id}>
             <label>Title: {value.title}</label> :<label>ID: {value.id}</label>
           </div>
         ))}

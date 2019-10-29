@@ -1,29 +1,26 @@
-import React, { Component } from "react";
-import "../style.less";
-import Layout from "../components/layout";
-const fetch = require("node-fetch");
+import React, { Component, AnimationEvent, HTMLAttributes } from 'react';
+
+import '../style.less';
+
+import Layout from '../components/layouts/layout1';
+
+const fetch = require('node-fetch');
 class App extends Component {
-  static async getInitialProps() {
+  static async getInitialProps () {
     var response = await fetch(
-      "https://my-json-server.typicode.com/typicode/demo/posts"
+      'https://my-json-server.typicode.com/typicode/demo/posts'
     );
     const result = await response.json();
-    return {
-      result
-    };
+    return { result };
   }
 
-  render() {
-    console.log(this.props);
-    let test = {
-      DomainID: "111",
-      DomainName: "222"
-    };
+  render () {
+    const test = { DomainID: '111', DomainName: '222' };
     return (
       <div>
         <Layout></Layout>
-        <ul>DomainID : {test.DomainID}</ul>
-        <ul>DomainName : {test.DomainName}</ul>
+        <ul>Domain ID : {test.DomainID}</ul>
+        <ul>Domain Name : {test.DomainName}</ul>
         <div className="example">Hello Less!</div>
       </div>
     );
