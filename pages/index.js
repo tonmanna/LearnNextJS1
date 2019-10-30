@@ -1,4 +1,4 @@
-import React, { Component, AnimationEvent, HTMLAttributes } from 'react';
+import React, { Component } from 'react';
 
 import '../style.less';
 
@@ -6,7 +6,7 @@ import Layout from '../components/layouts/layout1';
 
 const fetch = require('node-fetch');
 class App extends Component {
-  static async getInitialProps () {
+  static async getInitialProps() {
     var response = await fetch(
       'https://my-json-server.typicode.com/typicode/demo/posts'
     );
@@ -14,7 +14,7 @@ class App extends Component {
     return { result };
   }
 
-  render () {
+  render() {
     const test = { DomainID: '111', DomainName: '222' };
     return (
       <div>

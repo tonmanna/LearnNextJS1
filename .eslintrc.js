@@ -6,9 +6,9 @@ module.exports = {
   },
   parserOptions: {
     sourceType: "module",
-    ecmaVersion: 2017
+    ecmaVersion: 2018
   },
-  extends: ["eslint:recommended", "standard"],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   rules: {
     "new-cap": "off",
     "no-console": "off",

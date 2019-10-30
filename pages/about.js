@@ -1,16 +1,17 @@
-import React, { Component } from "react";
-import "../style.less";
-import Layout from "../components/layouts/layout1";
-const fetch = require("node-fetch");
+import React, { Component } from 'react';
+import '../style.less';
+import Layout from '../components/layouts/layout1';
+import fetch from 'node-fetch';
+import PropTypes from 'prop-types';
 class AboutPage extends Component {
   static async getInitialProps() {
     var response = await fetch(
-      "https://my-json-server.typicode.com/typicode/demo/posts"
+      'https://my-json-server.typicode.com/typicode/demo/posts'
     );
     const result = await response.json();
     return {
       result,
-      about: "about"
+      about: 'about'
     };
   }
 
@@ -28,4 +29,12 @@ class AboutPage extends Component {
     );
   }
 }
+
+AboutPage.propTypes = {
+  result: PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired
+  }))
+};
+
 export default AboutPage;
