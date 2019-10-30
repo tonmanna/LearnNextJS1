@@ -2,26 +2,35 @@ import React, { Component } from 'react';
 
 import '../style.less';
 
-import Layout from '../components/layouts/layout1';
+import ContactUs from '../components/system/contactus';
+import Content from '../components/system/content';
+import { Layout1, Layout2 } from '../components/layouts';
 
-const fetch = require('node-fetch');
 class App extends Component {
-  static async getInitialProps() {
-    var response = await fetch(
-      'https://my-json-server.typicode.com/typicode/demo/posts'
-    );
-    const result = await response.json();
-    return { result };
+
+  addComponent(cmp) {
+    switch (cmp) {
+      case 'Content': return <Content></Content>;
+      case 'ContactUs': return <ContactUs></ContactUs>;
+
+    }
   }
 
   render() {
-    const test = { DomainID: '111', DomainName: '222' };
+
+    var cmp = [];
+    for (var i = 0; i < 3; i++) {
+      cmp.push(this.addComponent('Content'));
+    }
+    for (var i = 0; i < 3; i++) {
+      cmp.push(this.addComponent('ContactUs'));
+    }
+
     return (
-      <div>
-        <Layout></Layout>
-        <ul>Domain ID : {test.DomainID}</ul>
-        <ul>Domain Name : {test.DomainName}</ul>
-        <div className="example">Hello Less!</div>
+      <div className="container container-table">
+        <div className="row vertical-center-row">
+          <Layout1 pos1={cmp} pos2={cmp}></Layout1>
+        </div>
       </div>
     );
   }

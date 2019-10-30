@@ -1,15 +1,16 @@
 import React from 'react';
-import Header from '../headers/header';
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-};
-
-const Layout1 = () => (
-  <div style={layoutStyle}>
-    <Header />
+import PropType from 'prop-types';
+const Layout1 = ({ pos2, pos1 }) => (
+  <div className="row">
+    <div className="col-md-8">{pos2}</div>
+    <div className="col-md-4">{pos1}</div>
   </div>
 );
+
+Layout1.propTypes = {
+  pos1: PropType.elementType,
+  pos2: PropType.elementType,
+};
+
 
 export default Layout1;

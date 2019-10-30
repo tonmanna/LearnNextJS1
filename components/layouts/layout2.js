@@ -1,22 +1,16 @@
 import React from 'react';
-import Header from '../headers/header';
-import PropTypes from 'prop-types';
-
-const layoutStyle = {
-  margin: 20,
-  padding: 20,
-  border: '1px solid #DDD'
-};
-
-const Layout2 = props => (
-  <div style={layoutStyle}>
-    <Header />
-    {props.children}
+import PropType from 'prop-types';
+const Layout1 = props => (
+  <div className="row">
+    <div className="col-md-4">{props.pos2}</div>
+    <div className="col-md-8">{props.pos1}</div>
   </div>
 );
 
-Layout2.propTypes = {
-  children: PropTypes.element.isRequired
+Layout1.propTypes = {
+  pos1: PropType.elementType,
+  pos2: PropType.elementType,
 };
 
-export default Layout2;
+
+export default Layout1;

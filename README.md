@@ -8,3 +8,10 @@ https://nextjs.org/docs#amp-first-page
 
 Dynamic Component
 https://dev.to/arpit016/dynamic-components-in-react-4iic
+
+Multiple Children 
+https://daveceddia.com/pluggable-slots-in-react-components/
+
+
+
+API Call
