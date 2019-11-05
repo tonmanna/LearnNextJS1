@@ -1,7 +1,8 @@
-const express = require('express')
-const next = require('next')
+const express = require('express');
+const next = require('next');
 
-const dev = process.env.NODE_ENV !== 'production'
+let dev = process.env.NODE_ENV !== 'production';
+dev = true;
 const app = next({
     dev
 })
