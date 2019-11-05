@@ -2,7 +2,7 @@ const express = require('express');
 const next = require('next');
 
 let dev = process.env.NODE_ENV !== 'production';
-dev = true;
+dev = false;
 const app = next({
     dev
 })
