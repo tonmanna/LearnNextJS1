@@ -1,11 +1,12 @@
 const express = require('express');
 const next = require('next');
-
+const { getCurrentData } = require('./lib_server/getCurrentData');
 let dev = process.env.NODE_ENV !== 'production';
 dev = false;
 const app = next({
     dev
 })
+
 const handle = app.getRequestHandler()
 
 app.prepare()
@@ -13,6 +14,7 @@ app.prepare()
         const server = express();
 
         server.get('*', (req, res) => {
+
             return handle(req, res)
         })
 

@@ -1,7 +1,9 @@
+const withPlugins = require('next-compose-plugins');
 const withLess = require('@zeit/next-less');
-
-/* Without CSS Modules, with PostCSS */
-module.exports = withLess();
+const withCSS = require('@zeit/next-css')
+module.exports = withPlugins([
+  [withLess, withCSS], { cssModules: true }
+]);
 
 /* With CSS Modules */
 // module.exports = withLess({ cssModules: true })

@@ -1,4 +1,6 @@
 @import (css) url(http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.css);
+@import './node_modules/react-datasheet/lib/react-datasheet.css';
+
 @theme: red;
 
 html, body, .container-table {
@@ -13,4 +15,12 @@ html, body, .container-table {
 
 .example {
   color: @theme;
+}
+
+td {
+  width: 300px !important;
+  height: 50px !important;
+}
+.data-editor{
+  height: 50px !important;
 }

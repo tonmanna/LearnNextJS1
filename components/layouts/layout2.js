@@ -8,8 +8,8 @@ const Layout1 = props => (
 );
 
 Layout1.propTypes = {
-  pos1: PropType.elementType,
-  pos2: PropType.elementType,
+  pos1: PropType.arrayOf(PropType.element),
+  pos2: PropType.arrayOf(PropType.element),
 };
 
 
